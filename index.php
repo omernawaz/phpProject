@@ -270,23 +270,27 @@ print_r($_SERVER);
 
 */
 
-if(isset($_POST['submit']))
-{
-    // $name = htmlspecialchars($_POST['name']);
-    // $age = htmlspecialchars($_POST['age']);
+// if(isset($_POST['submit']))
+// {
+//     // $name = htmlspecialchars($_POST['name']);
+//     // $age = htmlspecialchars($_POST['age']);
 
-    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-    $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
+//     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+//     $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
 
 
-    echo $name . "<br>" . $age;
-}
+//     echo $name . "<br>" . $age;
+// }
+
+setcookie("name", "Omer", time() + 86400);
+
+echo $_COOKIE['name'];
 
 ?>
 
-<!-- <a href="<?php echo $_SERVER['PHP_SELF'];?>?name=Omer&age=22">CLICK</a>  -->
+<!-- <a href="<?php // echo $_SERVER['PHP_SELF'];?>?name=Omer&age=22">CLICK</a> 
 
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+<form action="<?php // echo $_SERVER['PHP_SELF'];?>" method="POST">
     <div>
         <label for="name">Name: </label>
         <input type="text", name="name">
@@ -298,5 +302,5 @@ if(isset($_POST['submit']))
         <input type="text", name="age">
     </div>
     <input type="submit" value = "Submit", name="submit">
-</form>
+</form> -->
 
