@@ -254,5 +254,22 @@
 // echo $message;
 
 
+// SUPERGLOBALS
+
+/*
+$_GET, information and arguements passed in the url or form
+$_POST, information passed through form, not contained in the url but in the http request itself
+$_COOKIE, variables passed through cookies, returns an array
+$_SESSION, contains session information
+$_ENV, information on environment variables
+$_SERVER, info on the server environment
+$_REQUEST, variables passed through url or form, can be used as an alternative to get and post
+$_FILES, information about the files uploaded to the script
+
+
+*/
+
+print_r($_SERVER);
+
 ?>
 
