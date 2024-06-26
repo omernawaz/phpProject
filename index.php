@@ -221,8 +221,37 @@
 // print_r($sum);
 
 
+// $message = "Hello World";
+
+//echo strlen($message);
+
+// echo strpos($message, 'W');
+
+// echo strrpos($message, 'o');
+
+// echo strrev($message);
+
+// echo strtolower($message);
+
+// echo strtoupper($message);
+
+// echo ucwords(strtolower($message));
+
+// echo str_replace('Wor', 'Ho', $message);
+
+// echo substr($message, 5);
+
+// echo str_starts_with($message, "Hello") ? "Yes" : "No";
+
+// echo str_ends_with($message, "ld") ? "Yes" : "No";
 
 
+// $message = "<script>alert('dont do this')</script>";
+
+// $message = htmlspecialchars($message);
+
+// printf("%s likes to %s<br>", "Omer", "code");
+// echo $message;
 
 
 ?>
