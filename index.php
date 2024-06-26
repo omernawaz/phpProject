@@ -125,6 +125,33 @@
 
 // var_dump(json_encode($people));
 
+// function registerUser($email)
+// {
+//     echo $email . " registered";
+// }
+
+// registerUser("omer@gmail.com");
+
+// function add($value_l = 1 , $value_r = 1)
+// {
+//     return $value_l + $value_r;
+// }
+
+
+// $sum = add();
+
+// echo $sum;
+
+$subtract = function($v1, $v2) {
+    return $v1 - $v2;
+};
+
+echo $subtract(10,5);
+
+$multiply = fn($v1, $v2) => $v1 * $v2;
+
+echo $multiply(10,5);
+
 
 ?>
 
