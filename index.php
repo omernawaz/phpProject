@@ -64,6 +64,66 @@
 // echo $post;
 
 
+// loops
+
+// for($x = 1; $x <= 10; $x++)
+// {
+//     echo "X: " . $x . "<br>";
+// }
+
+// $x = 0;
+
+// while($x < 10)
+// {
+//     echo "X: " . $x . "<br>";
+//     $x++;
+// }
+
+// $posts = ["first post", "second post", "third post"];
+
+// foreach($posts as $post)
+// {
+//     echo $post . "<br>";
+// }
+
+// $person = [
+//     "first_name" => "Omer",
+//     "second_name" => "Nawaz",
+//     "email" => "Omer@gmail.com"
+// ];
+
+// foreach($person as $attribute => $value)
+// {
+//     echo $attribute . " = " . $value . "<br>";
+// }
+
+// $people = [
+//         [
+//             "first_name" => "Omer",
+//             "second_name" => "Nawaz",
+//             "email" => "Omer@gmail.com"
+//         ],
+//         [
+//             "first_name" => "Bilal",
+//             "second_name" => "Khan",
+//             "email" => "Bilal@gmail.com"
+//         ],
+//         [
+//             "first_name" => "Asad",
+//             "second_name" => "Ullah",
+//             "email" => "Asad@gmail.com"
+//         ]
+//     ];
+
+// // foreach($people as $person)
+// // {
+// //     foreach($person as $attribute => $value)
+// //     {
+// //         echo $attribute . " = " . $value . "<br>";
+// //     }
+// // }
+
+// var_dump(json_encode($people));
 
 
 ?>
