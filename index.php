@@ -266,10 +266,37 @@ $_SERVER, info on the server environment
 $_REQUEST, variables passed through url or form, can be used as an alternative to get and post
 $_FILES, information about the files uploaded to the script
 
+print_r($_SERVER);
 
 */
 
-print_r($_SERVER);
+if(isset($_POST['submit']))
+{
+    // $name = htmlspecialchars($_POST['name']);
+    // $age = htmlspecialchars($_POST['age']);
+
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+    $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
+
+
+    echo $name . "<br>" . $age;
+}
 
 ?>
+
+<!-- <a href="<?php echo $_SERVER['PHP_SELF'];?>?name=Omer&age=22">CLICK</a>  -->
+
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text", name="name">
+        
+    </div>
+
+    <div>
+        <label for="age">Age: </label>
+        <input type="text", name="age">
+    </div>
+    <input type="submit" value = "Submit", name="submit">
+</form>
 
