@@ -282,13 +282,43 @@ print_r($_SERVER);
 //     echo $name . "<br>" . $age;
 // }
 
-setcookie("name", "Omer", time() + 86400);
+// setcookie("name", "Omer", time() + 86400);
 
-echo $_COOKIE['name'];
+// echo $_COOKIE['name'];
+
+//SESSIONS
+
+session_start();
+
+if(isset($_POST['submit']))
+{
+    // $name = htmlspecialchars($_POST['name']);
+    // $age = htmlspecialchars($_POST['age']);
+
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+    //$age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
+
+    $password = $_POST['password'];
+
+    if($name == 'Omer' && $password == 'test123') {
+        $_SESSION['username'] = $name;
+        header('Location: /phpProject/misc/dashboard.php');
+    }
+    else {
+        echo "<script>alert('Invalid Password')</script>";
+        echo "<a href='phpProjet/index.php'>Home</a>";
+    }
+
+
+    // echo $name . "<br>" . $age;
+}
+
+
+
 
 ?>
 
-<!-- <a href="<?php // echo $_SERVER['PHP_SELF'];?>?name=Omer&age=22">CLICK</a> 
+<!-- <a href="<?php // echo $_SERVER['PHP_SELF'];?>?name=Omer&age=22">CLICK</a>  -->
 
 <form action="<?php // echo $_SERVER['PHP_SELF'];?>" method="POST">
     <div>
@@ -298,9 +328,9 @@ echo $_COOKIE['name'];
     </div>
 
     <div>
-        <label for="age">Age: </label>
-        <input type="text", name="age">
+        <label for="password">Age: </label>
+        <input type="text", name="password">
     </div>
     <input type="submit" value = "Submit", name="submit">
-</form> -->
+</form>
 
