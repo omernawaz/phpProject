@@ -306,7 +306,6 @@ if(isset($_POST['submit']))
     }
     else {
         echo "<script>alert('Invalid Password')</script>";
-        echo "<a href='phpProjet/index.php'>Home</a>";
     }
 
 
