@@ -19,9 +19,11 @@
 
 
 
+session_start();
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
+
     $allowed_extensions = array('png', 'jpg', 'jpeg', 'gif');
 
     if(!empty($_FILES['upload']['name']))
@@ -51,36 +53,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             move_uploaded_file($file_temp,$target_dir);
 
             $message = "<p style = 'color: green;'> File Uploaded Successfully </p>";
-
         }
 
     }
     else {
         $message = "<p style = 'color: red;'> Please choose a file </p>";
     }
+    $_SESSION['file_upload_message'] = $message;
+    header("Location: file_uploading_form.php");
 }
-
 
 
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Upload</title>
-</head>
-<body>
 
-    <?php echo $message ?? null ?>
-    <form action = "<?php echo $_SERVER['PHP_SELF']?>" method = "POST" enctype = "multipart/form-data">
-    Select image to Upload<br>
-    <input type="file" name="upload">
-    <br>
-    <input type="submit" value="Submit">
-
-    </form>
-</body>
-</html>
