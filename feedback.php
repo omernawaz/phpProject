@@ -1,23 +1,27 @@
 <?php include 'includes/header.php' ?>
 
 <?php 
-    $feedbacks = [
-        [
-            'email' => "matt@gmail.com",
-            'name' => 'Matt Hassel',
-            'feedback' => "I wanted to tell you how much I appreciate the work you and your team have been doing of all the overseas teams I've worked with, yours is the most communicative, most responsive and most talented."
-        ],
-        [
-            'email' => "ethan@gmail.com",
-            'name' => 'Ethan Laub',
-            'feedback' => "Arbisoft was an invaluable partner in developing TripScanner, as they served as my outsourced website and software development team. Arbisoft did an incredible job, building TripScanner end-to-end, and completing the project on time and within budget at a fraction of the cost of a US-based developer."
-        ],
-        [
-            'email' => "andy@gmail.com",
-            'name' => 'Andrew Kimball',
-            'feedback' => "Arbisoft is one of the most professional development partners we have ever worked with. They have proven time and again that they will not only do what we ask them to do, they will work hard to understand our ultimate goals and recommend innovative approaches to achieve those goals. Their developers are thoughtful and responsive. It's like having a development team in the office next door."
-        ]
-    ]
+    // $feedbacks = [
+    //     [
+    //         'email' => "matt@gmail.com",
+    //         'name' => 'Matt Hassel',
+    //         'feedback' => "I wanted to tell you how much I appreciate the work you and your team have been doing of all the overseas teams I've worked with, yours is the most communicative, most responsive and most talented."
+    //     ],
+    //     [
+    //         'email' => "ethan@gmail.com",
+    //         'name' => 'Ethan Laub',
+    //         'feedback' => "Arbisoft was an invaluable partner in developing TripScanner, as they served as my outsourced website and software development team. Arbisoft did an incredible job, building TripScanner end-to-end, and completing the project on time and within budget at a fraction of the cost of a US-based developer."
+    //     ],
+    //     [
+    //         'email' => "andy@gmail.com",
+    //         'name' => 'Andrew Kimball',
+    //         'feedback' => "Arbisoft is one of the most professional development partners we have ever worked with. They have proven time and again that they will not only do what we ask them to do, they will work hard to understand our ultimate goals and recommend innovative approaches to achieve those goals. Their developers are thoughtful and responsive. It's like having a development team in the office next door."
+    //     ]
+    // ]
+
+    $query = "SELECT * FROM userfeedback";
+    $query_result = mysqli_query($conn,$query);
+    $feedbacks = mysqli_fetch_all($query_result,MYSQLI_ASSOC);
 ?>
 
 
@@ -38,12 +42,12 @@
             <div class="card my-3 w-75">
                 <div class="card-body text-center "> 
                     <div class = "fw-light fst-italic">
-                        "<?php echo $feedback['feedback']; ?>"
+                        "<?php echo $feedback['body']; ?>"
                     </div>
                     <div class = "text-secondary mt-2">
                         By <?php echo $feedback['name']; ?>
                     </div>
-                    On <?php echo $feedback['email']; ?>
+                    <small class = 'text-black-50'> On <?php echo $feedback['date']; ?> </small>
                 </div>
             </div>
         <?php endforeach; ?>
