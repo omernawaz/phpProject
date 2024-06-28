@@ -19,7 +19,7 @@
     //     ]
     // ]
 
-    $query = "SELECT * FROM userfeedback";
+    $query = "SELECT * FROM userfeedback ORDER BY date desc";
     $query_result = mysqli_query($conn,$query);
     $feedbacks = mysqli_fetch_all($query_result,MYSQLI_ASSOC);
 ?>
