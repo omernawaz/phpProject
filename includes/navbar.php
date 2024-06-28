@@ -10,7 +10,7 @@ $active = 'nav-link active';
 
 <nav class="navbar sticky-top bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" href="arbisoft.com">
       <img src="images/arbilogo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
       Arbisoft
     </a>

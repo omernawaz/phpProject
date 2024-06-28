@@ -49,16 +49,25 @@
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control <?php echo !$emailErr ?: 'is-invalid';?>" 
                 id="email" name = "email" placeholder='Enter Your Email' value = <?php echo $email?>>
+                <div class="invalid-feedback">
+                    <?php echo $emailErr; ?>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Your Name</label>
                 <input type="text" class="form-control <?php echo !$nameErr ?: 'is-invalid';?>" 
                 id="name" name = "name" placeholder= "Enter Your Name" value = <?php echo $name ?>>
+                <div class="invalid-feedback">
+                    <?php echo $nameErr; ?>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label">Give us your feedback!</label>
                 <textarea type="text" class="form-control <?php echo !$bodyErr ?: 'is-invalid';?>" 
                 id="body" name ="body" placeholder = "Give us some feedback"  value = <?php echo $body?>></textarea>
+                <div class="invalid-feedback">
+                    <?php echo $bodyErr; ?>
+                </div>
             </div>
 
             <button type="submit" name='submit' class="btn btn-primary">Submit</button>
